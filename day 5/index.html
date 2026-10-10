@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Directory</title>
+  <script src="users.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f4f7fb;
+      color: #222;
+    }
+
+    h1 {
+      color: #174ea6;
+    }
+
+    button, input {
+      padding: 10px;
+      margin: 8px 0;
+      font-size: 16px;
+    }
+
+    input {
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      background: #174ea6;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background: #888;
+      cursor: not-allowed;
+    }
+
+    #users-list {
+      padding: 0;
+      list-style: none;
+    }
+
+    #users-list li {
+      background: white;
+      padding: 16px;
+      margin: 12px 0;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px #00000012;
+    }
+
+    #status {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>User Directory</h1>
+
+  <button id="load-users" type="button">Load Users</button>
+
+  <div>
+    <label for="filter-input">Filter users by name:</label>
+    <input
+      type="text"
+      id="filter-input"
+      placeholder="Enter a user's name..."
+    >
+  </div>
+
+  <p id="status" role="status" aria-live="polite">
+    Click "Load Users" to get started.
+  </p>
+
+  <ul id="users-list"></ul>
+</body>
+</html>
